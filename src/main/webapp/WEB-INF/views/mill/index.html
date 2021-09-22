@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org" xml:lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="windows-1251">
+    <title>Фрезы</title>
+</head>
+<body>
+
+<div th:each="mill : ${mill}">
+  <a th:href="@{/mill/{id}(id=${mill.getMillId()})}" th:text="${mill.getName() + ', ' + mill.getDiameter() + ', ' + mill.getNumberOfFlutes()+ ', ' + mill.getManufacturer() + ', '+ mill.getVendorCode()}">mill</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/mill/new">Добавить новую фрезу</a>
+
+</body>
+</html>
